@@ -14,14 +14,13 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  background: linear-gradient(90deg,#0f1724,#071028);
+  color: #e6eef8;
 }
 
 .App-link {
@@ -36,3 +35,54 @@
     transform: rotate(360deg);
   }
 }
+
+/* App layout */
+.root-center { height: 100vh; display:flex; align-items:center; justify-content:center; }
+.brand { font-weight:700; font-size:20px; letter-spacing:1px; }
+.nav { display:flex; gap:8px; }
+.nav button { background:transparent; border:1px solid rgba(255,255,255,0.06); color:#cfe8ff; padding:8px 12px; border-radius:8px; cursor:pointer; }
+.nav button.active { background:linear-gradient(90deg,#2b6ce6,#7b61ff); color:white; box-shadow:0 6px 18px rgba(39,85,255,0.18); }
+.user { display:flex; gap:8px; align-items:center; }
+.user-name { font-weight:600; color:#dff0ff; }
+.signout { background:transparent; border:1px solid rgba(255,255,255,0.06); color:#a8c6ff; padding:6px 10px; border-radius:6px; cursor:pointer; }
+
+.main-area { padding:18px; display:flex; justify-content:center; }
+.app-footer { text-align:center; padding:10px; color:#9fb5d8; font-size:12px; }
+
+/* Game area */
+.game-wrap { width:100%; max-width:980px; background:linear-gradient(180deg,#071126,#02111b); border-radius:12px; padding:12px; box-shadow: 0 8px 30px rgba(2,6,23,0.6); }
+.play-area { position:relative; height:520px; border-radius:8px; overflow:hidden; background:linear-gradient(180deg,#071429 0%, #00101a 100%); border:1px solid rgba(255,255,255,0.03); }
+.hud { display:flex; gap:12px; align-items:center; justify-content:space-between; padding:8px 0; color:#dcefff; }
+
+/* Blocks */
+.block { position:absolute; width:64px; height:28px; border-radius:6px; display:flex; align-items:center; justify-content:center; color:rgba(0,0,0,0.7); font-weight:700; cursor:pointer; transform-origin:center; box-shadow:0 6px 14px rgba(6,10,20,0.6); }
+.block.pop { transform:scale(0); transition:transform 260ms cubic-bezier(.2,.9,.3,1); opacity:0; }
+
+@keyframes fall {
+  from { transform: translateY(-120%); }
+  to { transform: translateY(120%); }
+}
+
+/* click pulse */
+.hit-pulse { position:absolute; border-radius:999px; pointer-events:none; animation:hit 420ms ease-out; background:radial-gradient(circle,#fff8 0%,#fff0 40%); }
+@keyframes hit { from { transform:scale(0.2); opacity:0.9 } to { transform:scale(1.6); opacity:0 } }
+
+/* particle canvas overlay full size */
+.particle-canvas { position:absolute; left:0; top:0; width:100%; height:100%; pointer-events:none; }
+
+/* Login */
+.login { width:360px; background:linear-gradient(180deg,#082033,#061423); padding:20px; border-radius:12px; color:#dff3ff; box-shadow:0 12px 36px rgba(2,6,23,0.7); }
+.login h2 { margin:0 0 10px; }
+.login label { display:block; font-size:13px; color:#bfe8ff; margin-bottom:6px; }
+.login input { width:100%; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02); color:#e6f6ff; }
+.login .actions { display:flex; gap:8px; margin-top:12px; }
+.btn { padding:10px 12px; border-radius:8px; border:0; cursor:pointer; }
+.btn.primary { background:linear-gradient(90deg,#5aa0ff,#7b61ff); color:white; }
+.btn.ghost { background:transparent; color:#d6efff; border:1px solid rgba(255,255,255,0.04); }
+
+/* leaderboard */
+.leaderboard { width:100%; max-width:800px; color:#eaf6ff; }
+.lb-table { width:100%; border-collapse:collapse; }
+.lb-table th, .lb-table td { padding:8px 10px; text-align:left; border-bottom:1px solid rgba(255,255,255,0.03); }
+.you { background:linear-gradient(90deg,#10233b,#0b2540); }
+
