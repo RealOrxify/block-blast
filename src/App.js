@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <div className="brand">BlockBlast</div>
+        <div className="brand">Block Blast</div>
         <nav className="nav">
           <button className={view === 'game' ? 'active' : ''} onClick={() => setView('game')}>Play</button>
           <button className={view === 'leaderboard' ? 'active' : ''} onClick={() => setView('leaderboard')}>Leaderboard</button>
